@@ -62,7 +62,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-6xl font-inter font-bold text-text-primary mb-6">Active Impact Projects</h1>
-                <p class="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto mb-8">Discover our ongoing initiatives creating lasting change in communities worldwide. Every project represents hope in action and measurable impact.</p>
+                <p class="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto mb-8">These results highlight LSF's capacity as a trusted, community-rooted partner in delivering sustainable, scalable impact across humanitarian, development, and peacebuilding sectors.</p>
                 
                 <!-- Quick Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -76,609 +76,391 @@
                     </div>
                     <div class="text-center">
                         <div class="text-3xl md:text-4xl font-inter font-bold text-accent mb-2">89%</div>
-                        <p class="text-text-secondary">Average Funding</p>
+                        <p class="text-text-secondary">Complete Project</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="bg-surface py-8 border-b border-border sticky top-16 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Desktop Filters -->
-            <div class="hidden md:flex items-center justify-between flex-wrap gap-4">
-                <div class="flex items-center space-x-6">
-                    <div class="flex items-center space-x-2">
-                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z"/>
-                        </svg>
-                        <span class="font-inter font-semibold text-text-primary">Filter by:</span>
-                    </div>
-                    
-                    <select id="region-filter" class="px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
-                        <option value>All Regions</option>
-                        <option value="africa">Africa</option>
-                        <option value="asia">Asia</option>
-                        <option value="south-america">South America</option>
-                        <option value="central-america">Central America</option>
-                    </select>
-                    
-                    <select id="focus-filter" class="px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
-                        <option value>All Focus Areas</option>
-                        <option value="education">Education</option>
-                        <option value="health">Health</option>
-                        <option value="environment">Environment</option>
-                        <option value="economic">Economic Development</option>
-                        <option value="water">Clean Water</option>
-                    </select>
-                    
-                    <select id="status-filter" class="px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
-                        <option value>All Status</option>
-                        <option value="active">Active</option>
-                        <option value="urgent">Urgent Funding</option>
-                        <option value="nearly-funded">Nearly Funded</option>
-                        <option value="completed">Recently Completed</option>
-                    </select>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <button id="reset-filters" class="text-text-secondary hover:text-primary transition-fast">
-                        <svg class="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                        </svg>
-                        Reset Filters
-                    </button>
-                    <div class="text-text-secondary">
-                        <span id="project-count">47</span> projects found
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Filter Button -->
-            <div class="md:hidden flex items-center justify-between">
-                <button id="mobile-filter-btn" class="flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-lg">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z"/>
-                    </svg>
-                    <span>Filters</span>
-                </button>
-                <div class="text-text-secondary">
-                    <span id="mobile-project-count">47</span> projects
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mobile Filter Overlay -->
-    <div id="mobile-filter-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden md:hidden">
-        <div class="fixed bottom-0 left-0 right-0 bg-surface rounded-t-2xl p-6 max-h-96 overflow-y-auto">
-            <div class="flex items-center justify-between mb-6">
-                <h3 class="text-lg font-inter font-semibold text-text-primary">Filter Projects</h3>
-                <button id="close-mobile-filter" class="text-text-secondary hover:text-primary">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-semibold text-text-primary mb-2">Region</label>
-                    <select id="mobile-region-filter" class="w-full px-4 py-3 border border-border rounded-lg">
-                        <option value>All Regions</option>
-                        <option value="africa">Africa</option>
-                        <option value="asia">Asia</option>
-                        <option value="south-america">South America</option>
-                        <option value="central-america">Central America</option>
-                    </select>
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-semibold text-text-primary mb-2">Focus Area</label>
-                    <select id="mobile-focus-filter" class="w-full px-4 py-3 border border-border rounded-lg">
-                        <option value>All Focus Areas</option>
-                        <option value="education">Education</option>
-                        <option value="health">Health</option>
-                        <option value="environment">Environment</option>
-                        <option value="economic">Economic Development</option>
-                        <option value="water">Clean Water</option>
-                    </select>
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-semibold text-text-primary mb-2">Status</label>
-                    <select id="mobile-status-filter" class="w-full px-4 py-3 border border-border rounded-lg">
-                        <option value>All Status</option>
-                        <option value="active">Active</option>
-                        <option value="urgent">Urgent Funding</option>
-                        <option value="nearly-funded">Nearly Funded</option>
-                        <option value="completed">Recently Completed</option>
-                    </select>
-                </div>
-                
-                <div class="flex space-x-4 pt-4">
-                    <button id="mobile-reset-filters" class="flex-1 px-4 py-3 border border-border rounded-lg text-text-secondary hover:bg-gray-50">
-                        Reset
-                    </button>
-                    <button id="apply-mobile-filters" class="flex-1 btn-primary">
-                        Apply Filters
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  
+        
+        <h1 class="text-3xl font-inter font-semibold text-text-primary text-center">Project Highlights</h1>
     <!-- Projects Grid -->
     <section class="py-16 bg-background">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                 
-                <!-- Project Card 1 - Water Project Kenya -->
+                <!-- Project Card 1 - Livelihoods -->
                 <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
                     <div class="relative overflow-hidden rounded-lg mb-4">
-                        <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
                         <div class="absolute top-4 left-4">
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span>
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span>
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
                         </div>
                     </div>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Clean Water Wells - Turkana County</h3>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Livelihoods & Food Security: </h3>
                             <div class="flex items-center text-text-secondary text-sm mb-2">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
                                 </svg>
-                                Turkana County, Kenya
+                                
                             </div>
-                            <p class="text-text-secondary text-sm">Providing sustainable clean water access to 5 rural communities, benefiting over 2,500 people including 800 children.</p>
+                            <p class="text-text-secondary text-sm">Trained 240 farmers and 80 women in climate-smart agriculture and support women-led enterprises in Kakuma Refugee Camp to drive inclusive economic growth.</p>
                         </div>
                         
-                        <!-- Progress Bar -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-semibold text-text-primary">Funding Progress</span>
-                                <span class="text-sm font-bold text-primary">78%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-primary h-3 rounded-full transition-all duration-500" style="width: 78%"></div>
-                            </div>
-                            <div class="flex justify-between text-xs text-text-secondary">
-                                <span>$23,400 raised</span>
-                                <span>$30,000 goal</span>
-                            </div>
-                        </div>
                         
-                        <!-- Impact Statement -->
-                        <div class="bg-primary-50 p-4 rounded-lg">
-                            <p class="text-sm text-primary font-semibold">Impact: 247 children now have daily access to clean water within 10 minutes of their homes</p>
-                        </div>
                         
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-3">
-                            <button class="flex-1 btn-primary text-sm py-2" onclick="openProjectModal('water-kenya')">View Details</button>
-                            <button class="flex-1 btn-accent text-sm py-2">Donate Now</button>
-                        </div>
                         
                         <!-- Share Button -->
                         <div class="flex items-center justify-center pt-2">
                             <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
                                 </svg>
-                                Share Project
+                                <!-- Share Project -->
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 2 - Education Bangladesh -->
-                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="asia" data-focus="education" data-status="nearly-funded">
+                <!-- Project Card 2 - Health &	Emergency Response:  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
                     <div class="relative overflow-hidden rounded-lg mb-4">
-                        <img src="https://images.pixabay.com/photo/2016/10/11/21/43/girls-1734678_1920.jpg" alt="Girls education program in Bangladesh" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
                         <div class="absolute top-4 left-4">
-                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">Nearly Funded</span>
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-white text-secondary px-3 py-1 rounded-full text-sm font-semibold">Education</span>
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
                         </div>
                     </div>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Girls Education Scholarship Program</h3>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Health & Emergency Response:</h3>
                             <div class="flex items-center text-text-secondary text-sm mb-2">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
                                 </svg>
-                                Dhaka & Chittagong, Bangladesh
+                                
                             </div>
-                            <p class="text-text-secondary text-sm">Empowering girls through secondary education scholarships, mentorship programs, and career guidance in underserved communities.</p>
+                            <p class="text-text-secondary text-sm">Delivered life-saving healthcare during the 2019	floods	through	mobile	clinics, addressing malaria, waterborne diseases, and health education.</p>
                         </div>
                         
-                        <!-- Progress Bar -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-semibold text-text-primary">Funding Progress</span>
-                                <span class="text-sm font-bold text-secondary">92%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-secondary h-3 rounded-full transition-all duration-500" style="width: 92%"></div>
-                            </div>
-                            <div class="flex justify-between text-xs text-text-secondary">
-                                <span>$41,200 raised</span>
-                                <span>$45,000 goal</span>
-                            </div>
-                        </div>
                         
-                        <!-- Impact Statement -->
-                        <div class="bg-secondary-50 p-4 rounded-lg">
-                            <p class="text-sm text-secondary font-semibold">Impact: 156 girls have completed secondary education and 89% are pursuing higher studies</p>
-                        </div>
                         
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-3">
-                            <button class="flex-1 btn-secondary text-sm py-2" onclick="openProjectModal('education-bangladesh')">View Details</button>
-                            <button class="flex-1 btn-accent text-sm py-2">Donate Now</button>
-                        </div>
-                        
-                        <!-- Share Button -->
-                        <div class="flex items-center justify-center pt-2">
-                            <button class="flex items-center text-text-secondary hover:text-secondary transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
-                                </svg>
-                                Share Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 - Amazon Reforestation -->
-                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="south-america" data-focus="environment" data-status="active">
-                    <div class="relative overflow-hidden rounded-lg mb-4">
-                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=600&auto=format&fit=crop" alt="Amazon reforestation project" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span>
-                        </div>
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Environment</span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Amazon Rainforest Restoration</h3>
-                            <div class="flex items-center text-text-secondary text-sm mb-2">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                                Acre State, Brazil
-                            </div>
-                            <p class="text-text-secondary text-sm">Restoring 2,500 acres of degraded rainforest while supporting indigenous communities and creating sustainable livelihoods.</p>
-                        </div>
-                        
-                        <!-- Progress Bar -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-semibold text-text-primary">Funding Progress</span>
-                                <span class="text-sm font-bold text-primary">65%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-primary h-3 rounded-full transition-all duration-500" style="width: 65%"></div>
-                            </div>
-                            <div class="flex justify-between text-xs text-text-secondary">
-                                <span>$32,500 raised</span>
-                                <span>$50,000 goal</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Impact Statement -->
-                        <div class="bg-primary-50 p-4 rounded-lg">
-                            <p class="text-sm text-primary font-semibold">Impact: 50,000 native trees planted, creating habitat for 200+ endangered species</p>
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-3">
-                            <button class="flex-1 btn-primary text-sm py-2" onclick="openProjectModal('amazon-reforestation')">View Details</button>
-                            <button class="flex-1 btn-accent text-sm py-2">Donate Now</button>
-                        </div>
                         
                         <!-- Share Button -->
                         <div class="flex items-center justify-center pt-2">
                             <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
                                 </svg>
-                                Share Project
+                                <!-- Share Project -->
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 4 - Healthcare Guatemala -->
-                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="central-america" data-focus="health" data-status="urgent">
+                <!-- Project Card 3 - Gender Equality & Child Protection  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
                     <div class="relative overflow-hidden rounded-lg mb-4">
-                        <img src="https://images.pexels.com/photos/6749773/pexels-photo-6749773.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Mobile healthcare clinic in Guatemala" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
                         <div class="absolute top-4 left-4">
-                            <span class="bg-error text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse">Urgent</span>
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-white text-error px-3 py-1 rounded-full text-sm font-semibold">Health</span>
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
                         </div>
                     </div>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Mobile Healthcare Clinics</h3>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Gender Equality & Child Protection : </h3>
                             <div class="flex items-center text-text-secondary text-sm mb-2">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
                                 </svg>
-                                Rural Guatemala
+                                
                             </div>
-                            <p class="text-text-secondary text-sm">Bringing essential healthcare services to remote communities through mobile clinics, serving over 15,000 people annually.</p>
+                            <p class="text-text-secondary text-sm">Trained over 700 women, 400 traditional leaders, and 240 child protection actors in GBV prevention and legal literacy. Reached 300 children with child rights education and contributed to reducing harmful practices like child marriage.</p>
                         </div>
                         
-                        <!-- Progress Bar -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-semibold text-text-primary">Funding Progress</span>
-                                <span class="text-sm font-bold text-error">34%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-error h-3 rounded-full transition-all duration-500" style="width: 34%"></div>
-                            </div>
-                            <div class="flex justify-between text-xs text-text-secondary">
-                                <span>$13,600 raised</span>
-                                <span>$40,000 goal</span>
-                            </div>
-                        </div>
                         
-                        <!-- Impact Statement -->
-                        <div class="bg-red-50 p-4 rounded-lg">
-                            <p class="text-sm text-error font-semibold">Impact: 3,200 patients treated, 450 children vaccinated, 89 emergency cases saved</p>
-                        </div>
                         
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-3">
-                            <button class="flex-1 bg-error text-white px-4 py-2 rounded-lg font-inter font-semibold hover:bg-red-600 transition-colors text-sm" onclick="openProjectModal('healthcare-guatemala')">View Details</button>
-                            <button class="flex-1 btn-accent text-sm py-2">Donate Now</button>
-                        </div>
-                        
-                        <!-- Share Button -->
-                        <div class="flex items-center justify-center pt-2">
-                            <button class="flex items-center text-text-secondary hover:text-error transition-colors text-sm">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
-                                </svg>
-                                Share Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 5 - Economic Development India -->
-                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="asia" data-focus="economic" data-status="active">
-                    <div class="relative overflow-hidden rounded-lg mb-4">
-                        <img src="https://images.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_1920.jpg" alt="Women's microfinance program in India" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span>
-                        </div>
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Economic</span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Women's Microfinance Initiative</h3>
-                            <div class="flex items-center text-text-secondary text-sm mb-2">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                                West Bengal, India
-                            </div>
-                            <p class="text-text-secondary text-sm">Empowering women entrepreneurs through microloans, business training, and market access to create sustainable livelihoods.</p>
-                        </div>
-                        
-                        <!-- Progress Bar -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-semibold text-text-primary">Funding Progress</span>
-                                <span class="text-sm font-bold text-primary">71%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-primary h-3 rounded-full transition-all duration-500" style="width: 71%"></div>
-                            </div>
-                            <div class="flex justify-between text-xs text-text-secondary">
-                                <span>$21,300 raised</span>
-                                <span>$30,000 goal</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Impact Statement -->
-                        <div class="bg-primary-50 p-4 rounded-lg">
-                            <p class="text-sm text-primary font-semibold">Impact: 324 women received microloans, 89% increased household income by 40%</p>
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-3">
-                            <button class="flex-1 btn-primary text-sm py-2" onclick="openProjectModal('microfinance-india')">View Details</button>
-                            <button class="flex-1 btn-accent text-sm py-2">Donate Now</button>
-                        </div>
                         
                         <!-- Share Button -->
                         <div class="flex items-center justify-center pt-2">
                             <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
                                 </svg>
-                                Share Project
+                                <!-- Share Project -->
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 6 - Completed Project -->
-                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="education" data-status="completed">
+                <!-- Project Card 4 - Education & Child Welfare  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
                     <div class="relative overflow-hidden rounded-lg mb-4">
-                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=600&auto=format&fit=crop" alt="Completed school construction project" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
                         <div class="absolute top-4 left-4">
-                            <span class="bg-success text-white px-3 py-1 rounded-full text-sm font-semibold">Completed</span>
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="bg-white text-success px-3 py-1 rounded-full text-sm font-semibold">Education</span>
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
                         </div>
                     </div>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Primary School Construction</h3>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Education & Child Welfare: </h3>
                             <div class="flex items-center text-text-secondary text-sm mb-2">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
                                 </svg>
-                                Mombasa, Kenya
+                                
                             </div>
-                            <p class="text-text-secondary text-sm">Successfully built a 6-classroom primary school with library, computer lab, and playground for 300 students.</p>
+                            <p class="text-text-secondary text-sm">Enrolled 116 refugee children, supported 205 children to complete school, and provided protection and psychosocial services to 400+ vulnerable children and widows.</p>
                         </div>
                         
-                        <!-- Progress Bar -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-semibold text-text-primary">Project Completed</span>
-                                <span class="text-sm font-bold text-success">100%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-success h-3 rounded-full transition-all duration-500" style="width: 100%"></div>
-                            </div>
-                            <div class="flex justify-between text-xs text-text-secondary">
-                                <span>$75,000 raised</span>
-                                <span>Goal achieved!</span>
-                            </div>
-                        </div>
                         
-                        <!-- Impact Statement -->
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <p class="text-sm text-success font-semibold">Final Impact: 300 children now attend school daily, 95% literacy improvement rate</p>
-                        </div>
                         
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-3">
-                            <button class="flex-1 bg-success text-white px-4 py-2 rounded-lg font-inter font-semibold hover:bg-green-600 transition-colors text-sm" onclick="openProjectModal('school-kenya')">View Impact Report</button>
-                            <button class="flex-1 btn-accent text-sm py-2">Support New Project</button>
-                        </div>
                         
                         <!-- Share Button -->
                         <div class="flex items-center justify-center pt-2">
-                            <button class="flex items-center text-text-secondary hover:text-success transition-colors text-sm">
+                            <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
                                 </svg>
-                                Share Success
+                                <!-- Share Project -->
                             </button>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 - WASH  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
+                        <div class="absolute top-4 left-4">
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">WASH : </h3>
+                            <div class="flex items-center text-text-secondary text-sm mb-2">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
+                                </svg>
+                                
+                            </div>
+                            <p class="text-text-secondary text-sm">Reduced cholera and diarrheal diseases through improved water infrastructure, hygiene promotion, and community-led sanitation.</p>
+                        </div>
+                        
+                        
+                        
+                        
+                        <!-- Share Button -->
+                        <div class="flex items-center justify-center pt-2">
+                            <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
+                                </svg>
+                                <!-- Share Project -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 - Peacebuilding & Social Cohesion  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
+                        <div class="absolute top-4 left-4">
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Peacebuilding & Social Cohesion: </h3>
+                            <div class="flex items-center text-text-secondary text-sm mb-2">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
+                                </svg>
+                                
+                            </div>
+                            <p class="text-text-secondary text-sm">Reduced intercommunal violence through integrated peace and livelihoods efforts. The Football4Peace program engaged 32 children in Jonglei State to promote unity, leadership, and healing through sport.</p>
+                        </div>
+                        
+                        
+                        
+                        
+                        <!-- Share Button -->
+                        <div class="flex items-center justify-center pt-2">
+                            <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
+                                </svg>
+                                <!-- Share Project -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Project Card 7 - Climate Action  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
+                        <div class="absolute top-4 left-4">
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Climate Action: </h3>
+                            <div class="flex items-center text-text-secondary text-sm mb-2">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
+                                </svg>
+                                
+                            </div>
+                            <p class="text-text-secondary text-sm">Planted over 1,000 trees, trained 100+ youth climate ambassadors, and supported 25 local climate adaptation groups.</p>
+                        </div>
+                        
+                        
+                        
+                        
+                        <!-- Share Button -->
+                        <div class="flex items-center justify-center pt-2">
+                            <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
+                                </svg>
+                                <!-- Share Project -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 8 - Volunteer Engagement  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
+                        <div class="absolute top-4 left-4">
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Volunteer Engagement: </h3>
+                            <div class="flex items-center text-text-secondary text-sm mb-2">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
+                                </svg>
+                                
+                            </div>
+                            <p class="text-text-secondary text-sm">Mobilized 420+ volunteers to serve 2,000+ youth and children, strengthening 30+ institutions through technical and capacity-building support.</p>
+                        </div>
+                        
+                        
+                        
+                        
+                        <!-- Share Button -->
+                        <div class="flex items-center justify-center pt-2">
+                            <button class="flex items-center text-text-secondary hover:text-primary transition-colors text-sm">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/> -->
+                                </svg>
+                                <!-- Share Project -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 9 - Creative Healing & Trauma Recovery  -->
+                <div class="project-card card hover:shadow-elevated transition-all duration-300 hover:-translate-y-2" data-region="africa" data-focus="water" data-status="active">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <!-- <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Clean water project in rural Kenya" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" /> -->
+                        <div class="absolute top-4 left-4">
+                            <!-- <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Active</span> -->
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <!-- <span class="bg-white text-primary px-3 py-1 rounded-full text-sm font-semibold">Clean Water</span> -->
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-inter font-semibold text-text-primary mb-2">Creative Healing & Trauma Recovery: </h3>
+                            <div class="flex items-center text-text-secondary text-sm mb-2">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/> -->
+                                    <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/> -->
+                                </svg>
+                                
+                            </div>
+                            <p class="text-text-secondary text-sm">Promoted emotional healing in post-conflict communities through arts-based activities like poetry, drama, and roleplay.</p>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                
+
+                
                     </div>
                 </div>
 
             </div>
 
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button id="load-more-btn" class="btn-primary px-8 py-3">
-                    Load More Projects
-                    <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </button>
+            
             </div>
         </div>
     </section>
 
-    <!-- Suggest a Project Section -->
-    <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-surface rounded-2xl p-8 md:p-12 shadow-elevated">
-                <div class="mb-8">
-                    <svg class="w-16 h-16 text-primary mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                    </svg>
-                    <h2 class="text-3xl md:text-4xl font-inter font-bold text-text-primary mb-4">Have a Project Idea?</h2>
-                    <p class="text-lg text-text-secondary max-w-2xl mx-auto">We believe the best solutions come from communities themselves. Share your project idea and help us create meaningful change together.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-                            </svg>
-                        </div>
-                        <h3 class="font-inter font-semibold text-text-primary mb-2">Submit Idea</h3>
-                        <p class="text-sm text-text-secondary">Share your community-driven project proposal</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <h3 class="font-inter font-semibold text-text-primary mb-2">Review Process</h3>
-                        <p class="text-sm text-text-secondary">Our team evaluates feasibility and impact potential</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <h3 class="font-inter font-semibold text-text-primary mb-2">Launch Together</h3>
-                        <p class="text-sm text-text-secondary">Approved projects get full support and funding</p>
-                    </div>
-                </div>
-                
-                <button class="btn-primary px-8 py-3">
-                    Suggest a Project
-                    <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
+    
 
-    <!-- Project Detail Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-surface rounded-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
-                <div class="sticky top-0 bg-surface border-b border-border p-6 flex items-center justify-between">
-                    <h2 id="modal-title" class="text-2xl font-inter font-bold text-text-primary">Project Details</h2>
-                    <button id="close-modal" class="text-text-secondary hover:text-primary">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
-                </div>
-                
-                <div id="modal-content" class="p-6">
-                    <!-- Dynamic content will be loaded here -->
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Footer -->
 <footer class="relative text-white py-16 overflow-hidden">
